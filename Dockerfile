@@ -24,6 +24,9 @@ RUN chmod +x ${ZED_SDK_INSTALLER} && ./${ZED_SDK_INSTALLER} -- silent
 RUN cd /root && git clone https://github.com/zjjMaiMai/TinyHITNet.git
 RUN cd /root/TinyHITNet
 WORKDIR /root/TinyHITNet
+COPY *.py *.sh /root/TinyHITNet/
+RUN python3 -m pip install pytorch-lightning
+RUN python3 -m pip install typing_extensions==4.7.1
 # COPY *.py /root/IGEV/IGEV-Stereo/
 # RUN python3 -m pip install gdown
 # RUN mkdir -p /root/IGEV/IGEV-Stereo/pretrained_models/sceneflow/; cd /root/IGEV/IGEV-Stereo/pretrained_models/sceneflow/ ; gdown --fuzzy https://drive.google.com/file/d/16e9NR_RfzFdYT5mPaGwpjccplCi82C2e/view?usp=drive_link
