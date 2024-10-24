@@ -1,3 +1,3 @@
 #/bin/bash
-docker build -t igev:100 .
+docker build -t hitnet:100 .
   
